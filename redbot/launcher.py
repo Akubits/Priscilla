@@ -107,7 +107,7 @@ def update_red(dev=False, style=False, mongo=False, docs=False, test=False):
         if egg_l:
             package += "#egg=Red-DiscordBot[{}]".format(", ".join(egg_l))
     else:
-        package = "Red-DiscordBot"
+        package = "Priscilla"
         if egg_l:
             package += "[{}]".format(", ".join(egg_l))
     arguments = [interpreter, "-m", "pip", "install", "-U", package]

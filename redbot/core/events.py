@@ -91,7 +91,7 @@ def init_events(bot, cli_flags):
 
         prefixes = cli_flags.prefix or (await bot.db.prefix())
         lang = await bot.db.locale()
-        red_pkg = pkg_resources.get_distribution("Red-DiscordBot")
+        red_pkg = pkg_resources.get_distribution("Priscilla")
         dpy_version = discord.__version__
 
         INFO = [
