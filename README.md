@@ -1,58 +1,8 @@
-<h1 align="center">
-  <br>
-  <a href="https://github.com/Cog-Creators/Red-DiscordBot/tree/V3/develop"><img src="https://imgur.com/pY1WUFX.png" alt="Red - Discord Bot"></a>
-  <br>
-  Red Discord Bot
-  <br>
-</h1>
+#Priscilla
 
-<h4 align="center">Music, Moderation, Trivia, Stream Alerts and Fully Modular.</h4>
-
-<p align="center">
-  <a href="https://discord.gg/red">
-    <img src="https://discordapp.com/api/guilds/133049272517001216/widget.png?style=shield" alt="Discord Server">
-  </a>
-  <a href="https://www.patreon.com/Red_Devs">
-    <img src="https://img.shields.io/badge/Support-Red!-yellow.svg" alt="Support Red on Patreon!">
-  </a>
-  <a href="https://www.python.org/downloads/">
-    <img src="https://img.shields.io/badge/Made%20With-Python%203.7-blue.svg?style=for-the-badge" alt="Made with Python 3.7">
-  </a>
-  <a href="https://crowdin.com/project/red-discordbot">
-    <img src="https://d322cqt584bo4o.cloudfront.net/red-discordbot/localized.svg" alt="Localized with Crowdin">
-  </a>
-  <a href="https://github.com/Rapptz/discord.py/tree/rewrite">
-      <img src="https://img.shields.io/badge/discord-py-blue.svg" alt="discord.py">
-  </a>
-</p>
-<p align="center">
-  <a href="https://travis-ci.com/Cog-Creators/Red-DiscordBot">
-    <img src="https://api.travis-ci.com/Cog-Creators/Red-DiscordBot.svg?branch=V3/develop" alt="Travis CI">
-  </a>
-  <a href="http://red-discordbot.readthedocs.io/en/v3-develop/?badge=v3-develop">
-    <img src="https://readthedocs.org/projects/red-discordbot/badge/?version=v3-develop" alt="Red on readthedocs.org">
-  </a>
-  <a href="https://github.com/ambv/black">
-    <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code Style: Black">
-  </a>
-  <a href="http://makeapullrequest.com">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
-  </a>
-</p>
-
-<p align="center">
-  <a href="#overview">Overview</a>
-  •
-  <a href="#installation">Installation</a>
-  •
-  <a href="http://red-discordbot.readthedocs.io/en/v3-develop/index.html">Documentation</a>
-  •
-  <a href="#plugins">Plugins</a>
-  •
-  <a href="#join-the-community">Community</a>
-  •
-  <a href="#license">License</a>
-</p>
+Priscilla is my personal fork of Red that I use in my own servers. There isn't really anything different
+between Priscilla and Red other than text file changes. I offer her with no support or warranty to anyone
+who wants to use her.
 
 # Overview
 

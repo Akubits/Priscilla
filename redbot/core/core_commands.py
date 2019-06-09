@@ -309,6 +309,8 @@ class Core(commands.Cog, CoreLogic):
                 data = await r.json()
         outdated = VersionInfo.from_str(data["info"]["version"]) > red_version_info
         about = _(
+			"Priscilla is my personal fork of Red that I use in my servers."
+			"She is available on github for anyone to use.\n\n"
             "This is an instance of [Red, an open source Discord bot]({}) "
             "created by [Twentysix]({}) and [improved by many]({}).\n\n"
             "Red is backed by a passionate community who contributes and "
@@ -327,7 +329,7 @@ class Core(commands.Cog, CoreLogic):
             )
         if custom_info:
             embed.add_field(name=_("About this instance"), value=custom_info, inline=False)
-        embed.add_field(name=_("About Red"), value=about, inline=False)
+        embed.add_field(name=_("About Priscilla"), value=about, inline=False)
 
         embed.set_footer(
             text=_("Bringing joy since 02 Jan 2016 (over {} days ago!)").format(days_since)
