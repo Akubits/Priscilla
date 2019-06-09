@@ -24,12 +24,12 @@ log = logging.getLogger("red")
 init()
 
 INTRO = """
-______         _           ______ _                       _  ______       _
-| ___ \       | |          |  _  (_)                     | | | ___ \     | |
-| |_/ /___  __| |  ______  | | | |_ ___  ___ ___  _ __ __| | | |_/ / ___ | |_
-|    // _ \/ _` | |______| | | | | / __|/ __/ _ \| '__/ _` | | ___ \/ _ \| __|
-| |\ \  __/ (_| |          | |/ /| \__ \ (_| (_) | | | (_| | | |_/ / (_) | |_
-\_| \_\___|\__,_|          |___/ |_|___/\___\___/|_|  \__,_| \____/ \___/ \__|
+  _____      _          _ _ _       
+ |  __ \    (_)        (_) | |      
+ | |__) | __ _ ___  ___ _| | | __ _ 
+ |  ___/ '__| / __|/ __| | | |/ _` |
+ | |   | |  | \__ \ (__| | | | (_| |
+ |_|   |_|  |_|___/\___|_|_|_|\__,_|
 """
 
 
@@ -152,7 +152,7 @@ def init_events(bot, cli_flags):
             enabled = on_symbol if enabled else off_symbol
             INFO2.append("{} {}".format(enabled, option))
 
-        print(Fore.RED + INTRO)
+        print(Fore.MAGENTA + Style.BRIGHT + INTRO)
         print(Style.RESET_ALL)
         print(bordered(INFO, INFO2, ascii_border=ascii_border))
 
