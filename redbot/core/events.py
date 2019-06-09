@@ -98,7 +98,7 @@ def init_events(bot, cli_flags):
             str(bot.user),
             "Prefixes: {}".format(", ".join(prefixes)),
             "Language: {}".format(lang),
-            "Red Bot Version: {}".format(red_version),
+            "Priscilla Bot Version: {}".format(red_version),
             "Discord.py Version: {}".format(dpy_version),
             "Shards: {}".format(bot.shard_count),
         ]
@@ -121,7 +121,7 @@ def init_events(bot, cli_flags):
                 )
 
                 await bot.send_to_owners(
-                    "Your Red instance is out of date! {} is the current "
+                    "Your Priscilla instance is out of date! {} is the current "
                     "version, however you are using {}!".format(
                         data["info"]["version"], red_version
                     )

@@ -15,7 +15,7 @@ __all__ = ["Context"]
 
 
 class Context(commands.Context):
-    """Command invocation context for Red.
+    """Command invocation context for Priscilla.
 
     All context passed into commands will be of this type.
 

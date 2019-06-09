@@ -64,7 +64,7 @@ class NoSubCommand(Exception):
 
 class RedHelpFormatter:
     """
-    Red's help implementation
+    Priscilla's help implementation
 
     This is intended to be overridable in parts to only change some behavior.
 

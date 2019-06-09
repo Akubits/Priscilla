@@ -246,7 +246,7 @@ class CoreLogic:
     @classmethod
     async def _version_info(cls) -> Dict[str, str]:
         """
-        Version information for Red and discord.py
+        Version information for Priscilla and discord.py
 
         Returns
         -------
@@ -287,7 +287,7 @@ class Core(commands.Cog, CoreLogic):
 
     @commands.command()
     async def info(self, ctx: commands.Context):
-        """Shows info about Red"""
+        """Shows info about Priscilla"""
         author_repo = "https://github.com/Twentysix26"
         org_repo = "https://github.com/Cog-Creators"
         red_repo = org_repo + "/Red-DiscordBot"
@@ -309,8 +309,8 @@ class Core(commands.Cog, CoreLogic):
                 data = await r.json()
         outdated = VersionInfo.from_str(data["info"]["version"]) > red_version_info
         about = _(
-			"Priscilla is my personal fork of Red that I use in my servers."
-			"She is available on github for anyone to use.\n\n"
+            "Priscilla is my personal fork of Red that I use in my servers."
+            "She is available on github for anyone to use.\n\n"
             "This is an instance of [Red, an open source Discord bot]({}) "
             "created by [Twentysix]({}) and [improved by many]({}).\n\n"
             "Red is backed by a passionate community who contributes and "
@@ -322,7 +322,7 @@ class Core(commands.Cog, CoreLogic):
         embed.add_field(name=_("Instance owned by"), value=str(owner))
         embed.add_field(name="Python", value=python_version)
         embed.add_field(name="discord.py", value=dpy_version)
-        embed.add_field(name=_("Red version"), value=red_version)
+        embed.add_field(name=_("Priscilla version"), value=red_version)
         if outdated:
             embed.add_field(
                 name=_("Outdated"), value=_("Yes, {} is available").format(data["info"]["version"])
@@ -341,7 +341,7 @@ class Core(commands.Cog, CoreLogic):
 
     @commands.command()
     async def uptime(self, ctx: commands.Context):
-        """Shows Red's uptime"""
+        """Shows Priscilla's uptime"""
         since = ctx.bot.uptime.strftime("%Y-%m-%d %H:%M:%S")
         delta = datetime.datetime.utcnow() - self.bot.uptime
         await ctx.send(
@@ -453,7 +453,7 @@ class Core(commands.Cog, CoreLogic):
     @commands.command()
     @commands.check(CoreLogic._can_get_invite_url)
     async def invite(self, ctx):
-        """Show's Red's invite url"""
+        """Show's Priscilla's invite url"""
         await ctx.author.send(await self._invite_url())
 
     @commands.group()
@@ -689,9 +689,9 @@ class Core(commands.Cog, CoreLogic):
     @commands.command(name="restart")
     @checks.is_owner()
     async def _restart(self, ctx: commands.Context, silently: bool = False):
-        """Attempts to restart Red
+        """Attempts to restart Priscilla
 
-        Makes Red quit with exit code 26
+        Makes Priscilla quit with exit code 26
         The restart is not guaranteed: it must be dealt
         with by the process manager in use"""
         with contextlib.suppress(discord.HTTPException):
@@ -701,7 +701,7 @@ class Core(commands.Cog, CoreLogic):
 
     @commands.group(name="set")
     async def _set(self, ctx: commands.Context):
-        """Changes Red's settings"""
+        """Changes Priscilla's settings"""
         if ctx.invoked_subcommand is None:
             if ctx.guild:
                 guild = ctx.guild
@@ -824,7 +824,7 @@ class Core(commands.Cog, CoreLogic):
     @_set.command()
     @checks.is_owner()
     async def avatar(self, ctx: commands.Context, url: str):
-        """Sets Red's avatar"""
+        """Sets Priscilla's avatar"""
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as r:
                 data = await r.read()
@@ -848,7 +848,7 @@ class Core(commands.Cog, CoreLogic):
     @checks.bot_in_a_guild()
     @checks.is_owner()
     async def _game(self, ctx: commands.Context, *, game: str = None):
-        """Sets Red's playing status"""
+        """Sets Priscilla's playing status"""
 
         if game:
             game = discord.Game(name=game)
@@ -862,7 +862,7 @@ class Core(commands.Cog, CoreLogic):
     @checks.bot_in_a_guild()
     @checks.is_owner()
     async def _listening(self, ctx: commands.Context, *, listening: str = None):
-        """Sets Red's listening status"""
+        """Sets Priscilla's listening status"""
 
         status = ctx.bot.guilds[0].me.status if len(ctx.bot.guilds) > 0 else discord.Status.online
         if listening:
@@ -876,7 +876,7 @@ class Core(commands.Cog, CoreLogic):
     @checks.bot_in_a_guild()
     @checks.is_owner()
     async def _watching(self, ctx: commands.Context, *, watching: str = None):
-        """Sets Red's watching status"""
+        """Sets Priscilla's watching status"""
 
         status = ctx.bot.guilds[0].me.status if len(ctx.bot.guilds) > 0 else discord.Status.online
         if watching:
@@ -890,7 +890,7 @@ class Core(commands.Cog, CoreLogic):
     @checks.bot_in_a_guild()
     @checks.is_owner()
     async def status(self, ctx: commands.Context, *, status: str):
-        """Sets Red's status
+        """Sets Priscilla's status
 
         Available statuses:
             online
@@ -919,7 +919,7 @@ class Core(commands.Cog, CoreLogic):
     @checks.bot_in_a_guild()
     @checks.is_owner()
     async def stream(self, ctx: commands.Context, streamer=None, *, stream_title=None):
-        """Sets Red's streaming status
+        """Sets Priscilla's streaming status
         Leaving both streamer and stream_title empty will clear it."""
 
         status = ctx.bot.guilds[0].me.status if len(ctx.bot.guilds) > 0 else None
@@ -940,7 +940,7 @@ class Core(commands.Cog, CoreLogic):
     @_set.command(name="username", aliases=["name"])
     @checks.is_owner()
     async def _username(self, ctx: commands.Context, *, username: str):
-        """Sets Red's username"""
+        """Sets Priscilla's username"""
         try:
             await self._name(name=username)
         except discord.HTTPException:
@@ -959,7 +959,7 @@ class Core(commands.Cog, CoreLogic):
     @checks.admin()
     @commands.guild_only()
     async def _nickname(self, ctx: commands.Context, *, nickname: str = None):
-        """Sets Red's nickname"""
+        """Sets Priscilla's nickname"""
         try:
             await ctx.guild.me.edit(nick=nickname)
         except discord.Forbidden:
@@ -970,7 +970,7 @@ class Core(commands.Cog, CoreLogic):
     @_set.command(aliases=["prefixes"])
     @checks.is_owner()
     async def prefix(self, ctx: commands.Context, *prefixes: str):
-        """Sets Red's global prefix(es)"""
+        """Sets Priscilla's global prefix(es)"""
         if not prefixes:
             await ctx.send_help()
             return
@@ -981,7 +981,7 @@ class Core(commands.Cog, CoreLogic):
     @checks.admin()
     @commands.guild_only()
     async def serverprefix(self, ctx: commands.Context, *prefixes: str):
-        """Sets Red's server prefix(es)"""
+        """Sets Priscilla's server prefix(es)"""
         if not prefixes:
             await ctx.bot.db.guild(ctx.guild).prefix.set([])
             await ctx.send(_("Guild prefixes have been reset."))
@@ -993,7 +993,7 @@ class Core(commands.Cog, CoreLogic):
     @_set.command()
     @commands.cooldown(1, 60 * 10, commands.BucketType.default)
     async def owner(self, ctx: commands.Context):
-        """Sets Red's main owner"""
+        """Sets Priscilla's main owner"""
         # According to the Python docs this is suitable for cryptographic use
         random = SystemRandom()
         length = random.randint(25, 35)
@@ -1007,7 +1007,7 @@ class Core(commands.Cog, CoreLogic):
         print(token)
 
         owner_disclaimer = _(
-            "⚠ **Only** the person who is hosting Red should be "
+            "⚠ **Only** the person who is hosting Priscilla should be "
             "owner. **This has SERIOUS security implications. The "
             "owner can access any data that is present on the host "
             "system.** ⚠"
@@ -1589,8 +1589,8 @@ class Core(commands.Cog, CoreLogic):
 
         if await ctx.embed_requested():
             e = discord.Embed(color=await ctx.embed_colour())
-            e.title = "Debug Info for Red"
-            e.add_field(name="Red version", value=redver, inline=True)
+            e.title = "Debug Info for Priscilla"
+            e.add_field(name="Priscilla version", value=redver, inline=True)
             e.add_field(name="Python version", value=pyver, inline=True)
             e.add_field(name="Discord.py version", value=dpy_version, inline=True)
             e.add_field(name="Pip version", value=pipver, inline=True)
@@ -1600,8 +1600,8 @@ class Core(commands.Cog, CoreLogic):
             await ctx.send(embed=e)
         else:
             info = (
-                "Debug Info for Red\n\n"
-                + "Red version: {}\n".format(redver)
+                "Debug Info for Priscilla\n\n"
+                + "Priscilla version: {}\n".format(redver)
                 + "Python version: {}\n".format(pyver)
                 + "Discord.py version: {}\n".format(dpy_version)
                 + "Pip version: {}\n".format(pipver)

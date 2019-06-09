@@ -168,7 +168,7 @@ class Cleanup(commands.Cog):
 
         Examples:
             `[p]cleanup user @\u200bTwentysix 2`
-            `[p]cleanup user Red 6`
+            `[p]cleanup user Priscilla 6`
         """
         channel = ctx.channel
 

@@ -311,7 +311,7 @@ class Downloader(commands.Cog):
             and cog.max_bot_version < red_version_info
         ):
             await ctx.send(
-                _("This cog requires at least Red version {min_version}").format(
+                _("This cog requires at least Priscilla version {min_version}").format(
                     min_version=cog.min_bot_version
                 )
                 + (

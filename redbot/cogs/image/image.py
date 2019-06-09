@@ -230,8 +230,8 @@ class Image(commands.Cog):
             "1. Login to a Giphy account.\n"
             "2. Visit [this](https://developers.giphy.com/dashboard) page\n"
             "3. Press `Create an App`\n"
-            "4. Write an app name, example: `Red Bot`\n"
-            "5. Write an app description, example: `Used for Red Bot`\n"
+            "4. Write an app name, example: `Priscilla`\n"
+            "5. Write an app description, example: `Used for Priscilla`\n"
             "6. Copy the API key shown.\n"
             "7. Do `{prefix}set api GIPHY api_key,your_api_key`\n"
         ).format(prefix=ctx.prefix)

@@ -9,7 +9,7 @@ _ = Translator(__name__, __file__)
 
 
 class RedError(Exception):
-    """Base error class for Red-related errors."""
+    """Base error class for Priscilla-related errors."""
 
 
 class PackageAlreadyLoaded(RedError):

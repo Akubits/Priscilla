@@ -2905,7 +2905,7 @@ class Audio(commands.Cog):
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def sing(self, ctx):
-        """Make Red sing one of her songs"""
+        """Make Priscilla play one of her songs"""
         ids = (
             "zGTkAVsrfg8",
             "cGMWL8cOeAU",
