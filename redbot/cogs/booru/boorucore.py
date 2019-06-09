@@ -286,6 +286,17 @@ class BooruCore:
             all_content.extend(content)
         return all_content
 
+    @cached(ttl=600, cache=SimpleMemoryCache, key="nekos_nsfw_futa")
+    async def fetch_nekos_nsfw_futa(self, ctx, tag):  # Nekos nsfw futa fetcher
+        life = boorusources.nekos_nsfw_futa
+        all_content = []
+        for nekos in life:
+            urlstr = "https://api.nekos.dev/api/v3/" + nekos + "/?count=20"
+            log.debug(urlstr)
+            content = await self.fetch_from_nekos(urlstr, "explicit", "Nekos.life")
+            all_content.extend(content)
+        return all_content
+
     @cached(ttl=600, cache=SimpleMemoryCache, key="nekos_nsfw_neko")
     async def fetch_nekos_nsfw_neko(self, ctx, tag):  # Nekos nsfw neko fetcher
         life = boorusources.nekos_nsfw_neko
@@ -743,6 +754,17 @@ class BooruCore:
 
     @cached(ttl=3600, cache=SimpleMemoryCache, key="doublepenetration")
     async def fetch_double_penetration(self, ctx, tag):  # double penetration fetcher
+        subreddits = boorusources.doublepenetration
+        all_content = []
+        for subreddit in subreddits:
+            urlstr = "https://reddit.com/r/" + subreddit + "/new.json?limit=100"
+            log.debug(urlstr)
+            content = await self.fetch_from_reddit(urlstr, "explicit", "Reddit")
+            all_content.extend(content)
+        return all_content
+
+    @cached(ttl=3600, cache=SimpleMemoryCache, key="futa")
+    async def fetch_futa(self, ctx, tag):  # futa fetcher
         subreddits = boorusources.doublepenetration
         all_content = []
         for subreddit in subreddits:

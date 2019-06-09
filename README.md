@@ -28,9 +28,11 @@ This is where Priscilla gets the following cogs:
 2. backup
 3. extendedmodlog
 4. fun
+5. welcome
 
 ## [Laggrons-Dumb-Cogs](https://github.com/retke/Laggrons-Dumb-Cogs)
-This is where Priscilla gets the say cog.
+This is where Priscilla gets the following cogs:
+1. say
 
 # License
 

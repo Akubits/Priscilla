@@ -91,7 +91,7 @@ class Boorualias:
     async def yaoi(self, ctx, *, tag=""):
         """Yaoi images"""
 
-        tag_default = " yaoi"
+        tag_default = " gay yaoi"
         tag += tag_default
         boards = ["dan", "gel", "kon", "yan", "safe", "gay"]
 
@@ -100,8 +100,8 @@ class Boorualias:
     @commands.command()
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True, add_reactions=True)
-    async def lesbian(self, ctx, *, tag=""):
-        """Lesbian images"""
+    async def yuri(self, ctx, *, tag=""):
+        """Yuri images"""
 
         tag_default = " lesbian yuri"
         tag += tag_default
@@ -157,6 +157,19 @@ class Boorualias:
         tag_default = " trap"
         tag += tag_default
         boards = ["dan", "gel", "kon", "yan", "safe", "trap", "nekos_nsfw_trap"]
+
+        await self.generic_alias_booru(ctx, boards, tag)
+
+    @commands.command()
+    @commands.guild_only()
+    @commands.is_nsfw()
+    @commands.bot_has_permissions(embed_links=True, add_reactions=True)
+    async def futa(self, ctx, *, tag=""):
+        """Futa images"""
+
+        tag_default = " futanari"
+        tag += tag_default
+        boards = ["dan", "gel", "kon", "yan", "safe", "futa", "nekos_nsfw_futa"]
 
         await self.generic_alias_booru(ctx, boards, tag)
 
