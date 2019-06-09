@@ -12,22 +12,22 @@ This is the main repository that Priscilla is forked off of.
 ## [Fox-V3](https://github.com/bobloy/Fox-V3/)
 This is where Priscilla gets the following cogs:
 1. hangman
-+ planttycoon
-+ scp
+2. planttycoon
+3. scp
 
 ## [Jintaku-Cogs](https://github.com/Jintaku/Jintaku-Cogs-V3/)
 This is where Priscilla gets the following cogs:
 1. anisearch
-+ booru
-+ conversationgames
-+ pokemon
+2. booru
+3. conversationgames
+4. pokemon
 
 ## [Trusty-Cogs](https://github.com/TrustyJAID/Trusty-cogs/)
 This is where Priscilla gets the following cogs:
 1. autorole
-+ backup
-+ extendedmodlog
-+ fun
+2. backup
+3. extendedmodlog
+4. fun
 
 ## [Laggrons-Dumb-Cogs](https://github.com/retke/Laggrons-Dumb-Cogs)
 This is where Priscilla gets the say cog.
@@ -38,6 +38,3 @@ Released under the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) li
 
 Priscilla is named after a character of the same name from the game Dark Souls
 developed by [FromSoftware](https://www.fromsoftware.jp/ww/) and published by [Bandai Namco Entertainment](https://www.bandainamcoent.com/)
-
-Red is named after the main character of "Transistor", a video game by
-[Super Giant Games](https://www.supergiantgames.com/games/transistor/).
