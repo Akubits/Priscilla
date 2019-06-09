@@ -379,6 +379,7 @@ class Audio(commands.Cog):
     async def jukebox(self, ctx, price: int):
         """Set a price for queueing tracks for non-mods. 0 to disable."""
         if price < 0:
+            jukebox = False
             return await self._embed_msg(ctx, _("Can't be less than zero."))
         if price == 0:
             jukebox = False
@@ -1178,9 +1179,9 @@ class Audio(commands.Cog):
                 return await self._embed_msg(
                     ctx, _("Connection to Lavalink has not yet been established.")
                 )
-        if guild_data["dj_enabled"]:
+        """if guild_data["dj_enabled"]:
             if not await self._can_instaskip(ctx, ctx.author):
-                return await self._embed_msg(ctx, _("You need the DJ role to queue tracks."))
+                return await self._embed_msg(ctx, _("You need the DJ role to queue tracks."))"""
         player = lavalink.get_player(ctx.guild.id)
         player.store("channel", ctx.channel.id)
         player.store("guild", ctx.guild.id)
@@ -2904,7 +2905,7 @@ class Audio(commands.Cog):
     @commands.command()
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
-    async def sing(self, ctx):
+    async def djpriscilla(self, ctx):
         """Make Priscilla play one of her songs"""
         ids = (
             "zGTkAVsrfg8",
