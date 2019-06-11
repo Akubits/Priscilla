@@ -1179,9 +1179,9 @@ class Audio(commands.Cog):
                 return await self._embed_msg(
                     ctx, _("Connection to Lavalink has not yet been established.")
                 )
-        """if guild_data["dj_enabled"]:
+        if guild_data["dj_enabled"]:
             if not await self._can_instaskip(ctx, ctx.author):
-                return await self._embed_msg(ctx, _("You need the DJ role to queue tracks."))"""
+                return await self._embed_msg(ctx, _("You need the DJ role to queue tracks."))
         player = lavalink.get_player(ctx.guild.id)
         player.store("channel", ctx.channel.id)
         player.store("guild", ctx.guild.id)
@@ -2665,10 +2665,10 @@ class Audio(commands.Cog):
             embed = await self._build_search_page(ctx, tracks, page_num)
             search_page_list.append(embed)
 
-        """dj_enabled = await self.config.guild(ctx.guild).dj_enabled()
+        dj_enabled = await self.config.guild(ctx.guild).dj_enabled()
         if dj_enabled:
             if not await self._can_instaskip(ctx, ctx.author):
-                return await menu(ctx, search_page_list, DEFAULT_CONTROLS)"""
+                return await menu(ctx, search_page_list, DEFAULT_CONTROLS)
 
         await menu(ctx, search_page_list, SEARCH_CONTROLS)
 
