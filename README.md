@@ -21,6 +21,7 @@ This is where Priscilla gets the following cogs:
 2. booru
 3. conversationgames
 4. pokemon
+5. roleplay
 
 ## [Trusty-Cogs](https://github.com/TrustyJAID/Trusty-cogs/)
 This is where Priscilla gets the following cogs:
@@ -28,7 +29,8 @@ This is where Priscilla gets the following cogs:
 2. backup
 3. extendedmodlog
 4. fun
-5. welcome
+5. stickyroles
+6. welcome
 
 ## [Laggrons-Dumb-Cogs](https://github.com/retke/Laggrons-Dumb-Cogs)
 This is where Priscilla gets the following cogs:

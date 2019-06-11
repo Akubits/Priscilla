@@ -32,7 +32,7 @@ class Booru(BaseCog, BooruCore, Booruset, Boorualias):
     def __init__(self):
         # Reusable stuff
         self.board_names = ["dan", "gel", "kon", "yan", "r34", "safe", "e621", "4k", "ahegao", "ass", "anal", "bdsm", "blowjob", "boobs", "cunnilingus", "bottomless", "cumshots", "deepthroat", "dick", "double_penetration", "gay", "group", "hentai", "lesbian", "milf", "public", "rule34", "thigh", "trap", "wild", "redhead", "oboobs", "obutts", "nekos_nsfw_classic", "nekos_nsfw_blowjob", "nekos_nsfw_boobs", "nekos_nsfw_neko", "nekos_nsfw_furry", "nekos_nsfw_pussy", "nekos_nsfw_feet", "nekos_nsfw_yuri", "nekos_nsfw_anal", "nekos_nsfw_solo", "nekos_nsfw_cum", "nekos_nsfw_spank", "nekos_nsfw_cunnilingus", "nekos_nsfw_bdsm", "nekos_nsfw_piercings", "nekos_nsfw_trap", "nekos_nsfw_kitsune", "nekos_nsfw_holo", "nekos_nsfw_femdom", "nekos_sfw_neko", "nekos_sfw_waifu", "nekos_sfw_kitsune", "nekos_sfw_smug", "nekos_sfw_holo"]
-        self.nsfw_board_names = ["4k", "ahegao", "ass", "anal", "bdsm", "blowjob", "boobs", "cunnilingus", "bottomless", "cumshots", "deepthroat", "dick", "double_penetration", "futa", "gay", "group", "hentai", "lesbian", "milf", "public", "rule34", "thigh", "trap", "wild", "redhead", "oboobs", "obutts", "nekos_nsfw_classic", "nekos_nsfw_blowjob", "nekos_nsfw_boobs", "nekos_nsfw_neko", "nekos_nsfw_furry", "nekos_nsfw_pussy", "nekos_nsfw_feet", "nekos_nsfw_yuri", "nekos_nsfw_anal", "nekos_nsfw_solo", "nekos_nsfw_cum", "nekos_nsfw_spank", "nekos_nsfw_cunnilingus", "nekos_nsfw_bdsm", "nekos_nsfw_piercings", "nekos_nsfw_trap", "nekos_nsfw_kitsune", "nekos_nsfw_holo", "nekos_nsfw_femdom"]
+        self.nsfw_board_names = ["4k", "ahegao", "ass", "anal", "bdsm", "blowjob", "boobs", "cunnilingus", "bottomless", "cumshots", "deepthroat", "dick", "double_penetration", "gay", "group", "hentai", "lesbian", "milf", "public", "rule34", "thigh", "trap", "wild", "redhead", "oboobs", "obutts", "nekos_nsfw_classic", "nekos_nsfw_blowjob", "nekos_nsfw_boobs", "nekos_nsfw_neko", "nekos_nsfw_furry", "nekos_nsfw_pussy", "nekos_nsfw_feet", "nekos_nsfw_yuri", "nekos_nsfw_anal", "nekos_nsfw_solo", "nekos_nsfw_cum", "nekos_nsfw_spank", "nekos_nsfw_cunnilingus", "nekos_nsfw_bdsm", "nekos_nsfw_piercings", "nekos_nsfw_trap", "nekos_nsfw_kitsune", "nekos_nsfw_holo", "nekos_nsfw_femdom"]
         self.weeb_board_names = ["dan", "gel", "kon", "yan", "r34", "safe", "e621", "hentai", "nekos_nsfw_classic", "nekos_nsfw_blowjob", "nekos_nsfw_boobs", "nekos_nsfw_neko", "nekos_nsfw_furry", "nekos_nsfw_pussy", "nekos_nsfw_feet", "nekos_nsfw_yuri", "nekos_nsfw_anal", "nekos_nsfw_solo", "nekos_nsfw_cum", "nekos_nsfw_spank", "nekos_nsfw_cunnilingus", "nekos_nsfw_bdsm", "nekos_nsfw_piercings", "nekos_nsfw_trap", "nekos_nsfw_kitsune", "nekos_nsfw_holo", "nekos_nsfw_femdom", "nekos_sfw_neko", "nekos_sfw_waifu", "nekos_sfw_kitsune", "nekos_sfw_smug", "nekos_sfw_holo"]
         self.session = aiohttp.ClientSession()
 
@@ -512,17 +512,6 @@ class Booru(BaseCog, BooruCore, Booruset, Boorualias):
         """Images from yuri endpoints"""
 
         board = "nekos_nsfw_yuri"
-        tag = None
-        await self.generic_specific_source(ctx, board, tag)
-
-    @nsfw.group(name="futa", autohelp=False)
-    @commands.guild_only()
-    @commands.is_nsfw()
-    @commands.bot_has_permissions(embed_links=True, add_reactions=True)
-    async def _nekos_nsfw_futa(self, ctx):
-        """Images from yuri endpoints"""
-
-        board = "nekos_nsfw_futa"
         tag = None
         await self.generic_specific_source(ctx, board, tag)
 

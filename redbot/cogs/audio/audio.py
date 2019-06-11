@@ -2665,10 +2665,10 @@ class Audio(commands.Cog):
             embed = await self._build_search_page(ctx, tracks, page_num)
             search_page_list.append(embed)
 
-        dj_enabled = await self.config.guild(ctx.guild).dj_enabled()
+        """dj_enabled = await self.config.guild(ctx.guild).dj_enabled()
         if dj_enabled:
             if not await self._can_instaskip(ctx, ctx.author):
-                return await menu(ctx, search_page_list, DEFAULT_CONTROLS)
+                return await menu(ctx, search_page_list, DEFAULT_CONTROLS)"""
 
         await menu(ctx, search_page_list, SEARCH_CONTROLS)
 

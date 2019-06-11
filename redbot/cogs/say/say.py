@@ -150,7 +150,7 @@ class Say(BaseCog):
                 )
 
     @commands.command(name="say")
-    @checks.guildowner()
+    @checks.is_owner()
     async def _say(self, ctx, *, text: str = ""):
         """
         Make the bot say what you want in the desired channel.
@@ -167,7 +167,7 @@ class Say(BaseCog):
         await self.say(ctx, text, files)
 
     @commands.command(name="sayd", aliases=["sd"])
-    @checks.guildowner()
+    @checks.is_owner()
     async def _saydelete(self, ctx, *, text: str = ""):
         """
         Same as say command, except it deletes your message.
@@ -190,7 +190,7 @@ class Say(BaseCog):
         await self.say(ctx, text, files)
 
     @commands.command(name="interact")
-    @checks.guildowner()
+    @checks.is_owner()
     async def _interact(self, ctx, channel: discord.TextChannel = None):
         """Start receiving and sending messages as the bot through DM"""
 

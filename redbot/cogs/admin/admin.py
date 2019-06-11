@@ -322,6 +322,7 @@ class Admin(commands.Cog):
 
     @commands.guild_only()
     @commands.group(invoke_without_command=True)
+    @checks.admin()
     async def selfrole(self, ctx: commands.Context, *, selfrole: SelfRole):
         """Add a role to yourself.
 
