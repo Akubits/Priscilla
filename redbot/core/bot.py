@@ -217,14 +217,14 @@ class RedBase(commands.GroupMixin, commands.bot.BotBase, RPCMixin):  # pylint: d
         """
         Same as base method, but dispatches an additional event for cogs
         which want to handle normal messages differently to command
-        messages, without the overhead of additional get_context calls
-        per cog .
+        messages,  without the overhead of additional get_context calls
+        per cog.
         """
         if not message.author.bot:
             ctx = await self.get_context(message)
             await self.invoke(ctx)
         else:
-            ctx - None
+            ctx = None
 
         if ctx is None or ctx.valid is False:
             self.dispatch("message_without_command", message)

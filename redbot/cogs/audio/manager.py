@@ -213,7 +213,7 @@ class ServerManager:
                     file.flush()
                 finally:
                     file.close()
-                
+
                 shutil.move(path, str(LAVALINK_JAR_FILE), copy_function=shutil.copyfile)
 
     @classmethod
