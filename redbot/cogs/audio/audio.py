@@ -379,7 +379,6 @@ class Audio(commands.Cog):
     async def jukebox(self, ctx, price: int):
         """Set a price for queueing tracks for non-mods. 0 to disable."""
         if price < 0:
-            jukebox = False
             return await self._embed_msg(ctx, _("Can't be less than zero."))
         if price == 0:
             jukebox = False
