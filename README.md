@@ -6,9 +6,6 @@ who wants to use her.
 
 # Priscilla is a fork of [Red-DiscordBot](https://github.com/Cog-Creators/Red-DiscordBot)
 
-This repo also contains a modified version of conversationgames from [Jintaku Cogs](https://github.com/Jintaku/Jintaku-Cogs-V3) with most
-things that could be considered NSFW removed.
-
 # License
 
 Released under the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
