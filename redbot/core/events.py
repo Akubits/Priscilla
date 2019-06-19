@@ -330,7 +330,7 @@ def _get_startup_screen_specs():
 
     """
     encoder = codecs.getencoder(sys.stdout.encoding)
-    check_mark = "\N{SQUARE ROOT}"
+    check_mark = "\N{check mark}"
     try:
         encoder(check_mark)
     except UnicodeEncodeError:
