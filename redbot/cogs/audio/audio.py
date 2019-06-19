@@ -3150,7 +3150,7 @@ class Audio(commands.Cog):
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def volume(self, ctx, vol: int = None):
-        """Set the volume, 1% - 150%."""
+        """Set the volume, 1% - 1000%."""
         dj_enabled = await self.config.guild(ctx.guild).dj_enabled()
         if not vol:
             vol = await self.config.guild(ctx.guild).volume()
@@ -3177,8 +3177,8 @@ class Audio(commands.Cog):
                 return await self._embed_msg(ctx, _("You need the DJ role to change the volume."))
         if vol < 0:
             vol = 0
-        if vol > 150:
-            vol = 150
+        if vol > 1000:
+            vol = 1000
             await self.config.guild(ctx.guild).volume.set(vol)
             if self._player_check(ctx):
                 await lavalink.get_player(ctx.guild.id).set_volume(vol)
