@@ -103,9 +103,9 @@ def update_red(dev=False, style=False, mongo=False, docs=False, test=False):
     if test:
         egg_l.append("test")
     if dev:
-        package = "git+https://github.com/Cog-Creators/Red-DiscordBot@V3/develop"
+        package = "git+https://github.com/Akubits/Priscilla@V3/develop"
         if egg_l:
-            package += "#egg=Red-DiscordBot[{}]".format(", ".join(egg_l))
+            package += "#egg=Priscilla[{}]".format(", ".join(egg_l))
     else:
         package = "Priscilla"
         if egg_l:

@@ -550,8 +550,8 @@ class Downloader(commands.Cog):
             repo_url = _("Missing from installed repos") if repo is None else repo.url
             cog_name = cog_installable.name
         else:
-            made_by = "26 & co."
-            repo_url = "https://github.com/Cog-Creators/Red-DiscordBot"
+            made_by = "26 & co. (slightly modified by Akubits)"
+            repo_url = "https://github.com/Akubits/Priscilla"
             cog_name = cog_installable.__class__.__name__
 
         msg = _("Command: {command}\nMade by: {author}\nRepo: {repo}\nCog name: {cog}")
