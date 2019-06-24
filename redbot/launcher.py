@@ -102,14 +102,9 @@ def update_red(dev=False, style=False, mongo=False, docs=False, test=False):
         egg_l.append("docs")
     if test:
         egg_l.append("test")
-    if dev:
-        package = "git+https://github.com/Akubits/Priscilla@V3/develop"
-        if egg_l:
-            package += "#egg=Priscilla[{}]".format(", ".join(egg_l))
-    else:
-        package = "Priscilla"
-        if egg_l:
-            package += "[{}]".format(", ".join(egg_l))
+    package = "git+https://github.com/Akubits/Priscilla@V3/develop"
+    if egg_l:
+        package += "[{}]".format(", ".join(egg_l))
     arguments = [interpreter, "-m", "pip", "install", "-U", package]
     if not is_venv():
         arguments.append("--user")
