@@ -619,7 +619,7 @@ class RedBase(
         self, ctx: commands.Context, help_for: Union[commands.Command, commands.GroupMixin, str]
     ):
         """
-        Invokes Red's helpformatter for a given context and object.
+        Invokes Priscilla's helpformatter for a given context and object.
         """
         return await self._help_formatter.send_help(ctx, help_for)
 
@@ -1198,7 +1198,7 @@ class Red(RedBase, discord.AutoShardedClient):
             pass
 
     async def shutdown(self, *, restart: bool = False):
-        """Gracefully quit Red.
+        """Gracefully quit Priscilla.
 
         The program will exit with code :code:`0` by default.
 

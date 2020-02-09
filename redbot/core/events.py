@@ -23,12 +23,12 @@ log = logging.getLogger("red")
 init()
 
 INTRO = """
-______         _           ______ _                       _  ______       _
-| ___ \       | |          |  _  (_)                     | | | ___ \     | |
-| |_/ /___  __| |  ______  | | | |_ ___  ___ ___  _ __ __| | | |_/ / ___ | |_
-|    // _ \/ _` | |______| | | | | / __|/ __/ _ \| '__/ _` | | ___ \/ _ \| __|
-| |\ \  __/ (_| |          | |/ /| \__ \ (_| (_) | | | (_| | | |_/ / (_) | |_
-\_| \_\___|\__,_|          |___/ |_|___/\___\___/|_|  \__,_| \____/ \___/ \__|
+██████╗ ██████╗ ██╗███████╗ ██████╗██╗██╗     ██╗      █████╗ 
+██╔══██╗██╔══██╗██║██╔════╝██╔════╝██║██║     ██║     ██╔══██╗
+██████╔╝██████╔╝██║███████╗██║     ██║██║     ██║     ███████║
+██╔═══╝ ██╔══██╗██║╚════██║██║     ██║██║     ██║     ██╔══██║
+██║     ██║  ██║██║███████║╚██████╗██║███████╗███████╗██║  ██║
+╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
 """
 
 
@@ -64,14 +64,14 @@ def init_events(bot, cli_flags):
 
         prefixes = cli_flags.prefix or (await bot._config.prefix())
         lang = await bot._config.locale()
-        red_pkg = pkg_resources.get_distribution("Red-DiscordBot")
+        red_pkg = pkg_resources.get_distribution("Priscilla")
         dpy_version = discord.__version__
 
         INFO = [
             str(bot.user),
             "Prefixes: {}".format(", ".join(prefixes)),
             "Language: {}".format(lang),
-            "Red Bot Version: {}".format(red_version),
+            "Priscilla Bot Version: {}".format(red_version),
             "Discord.py Version: {}".format(dpy_version),
             "Shards: {}".format(bot.shard_count),
         ]
@@ -94,7 +94,7 @@ def init_events(bot, cli_flags):
                     "but you're using {}".format(data["info"]["version"], red_version)
                 )
                 outdated_red_message = (
-                    "Your Red instance is out of date! {} is the current "
+                    "Your Priscilla instance is out of date! {} is the current "
                     "version, however you are using {}!"
                 ).format(data["info"]["version"], red_version)
         INFO2 = []
@@ -121,7 +121,7 @@ def init_events(bot, cli_flags):
             enabled = on_symbol if enabled else off_symbol
             INFO2.append("{} {}".format(enabled, option))
 
-        print(Fore.RED + INTRO)
+        print(Fore.MAGENTA + Style.BRIGHT + INTRO)
         print(Style.RESET_ALL)
         print(bordered(INFO, INFO2, ascii_border=ascii_border))
 
@@ -304,7 +304,7 @@ def _get_startup_screen_specs():
 
     """
     encoder = codecs.getencoder(sys.stdout.encoding)
-    check_mark = "\N{SQUARE ROOT}"
+    check_mark = "\N{check mark}"
     try:
         encoder(check_mark)
     except UnicodeEncodeError:

@@ -264,7 +264,7 @@ class CoreLogic:
     @classmethod
     async def _version_info(cls) -> Dict[str, str]:
         """
-        Version information for Red and discord.py
+        Version information for Priscilla and discord.py
 
         Returns
         -------
@@ -305,7 +305,7 @@ class Core(commands.Cog, CoreLogic):
 
     @commands.command()
     async def info(self, ctx: commands.Context):
-        """Shows info about Red"""
+        """Shows info about Priscilla"""
         author_repo = "https://github.com/Twentysix26"
         org_repo = "https://github.com/Cog-Creators"
         red_repo = org_repo + "/Red-DiscordBot"
@@ -330,7 +330,9 @@ class Core(commands.Cog, CoreLogic):
                 data = await r.json()
         outdated = VersionInfo.from_str(data["info"]["version"]) > red_version_info
         about = _(
-            "This bot is an instance of [Red, an open source Discord bot]({}) "
+            "Priscilla is my personal fork of Red that I use in my servers. "
+            "[She is available on github](https://github.com/Akubits/Priscilla) for anyone to use.\n\n"
+            "This is an instance of [Red, an open source Discord bot]({}) "
             "created by [Twentysix]({}) and [improved by many]({}).\n\n"
             "Red is backed by a passionate community who contributes and "
             "creates content for everyone to enjoy. [Join us today]({}) "
@@ -342,14 +344,14 @@ class Core(commands.Cog, CoreLogic):
         embed.add_field(name=_("Instance owned by"), value=str(owner))
         embed.add_field(name="Python", value=python_version)
         embed.add_field(name="discord.py", value=dpy_version)
-        embed.add_field(name=_("Red version"), value=red_version)
+        embed.add_field(name=_("Priscilla version"), value=red_version)
         if outdated:
             embed.add_field(
                 name=_("Outdated"), value=_("Yes, {} is available").format(data["info"]["version"])
             )
         if custom_info:
             embed.add_field(name=_("About this instance"), value=custom_info, inline=False)
-        embed.add_field(name=_("About Red"), value=about, inline=False)
+        embed.add_field(name=_("About Priscilla"), value=about, inline=False)
 
         embed.set_footer(
             text=_("Bringing joy since 02 Jan 2016 (over {} days ago!)").format(days_since)
@@ -853,9 +855,9 @@ class Core(commands.Cog, CoreLogic):
     @commands.command(name="restart")
     @checks.is_owner()
     async def _restart(self, ctx: commands.Context, silently: bool = False):
-        """Attempts to restart Red
+        """Attempts to restart Priscilla
 
-        Makes Red quit with exit code 26
+        Makes Priscilla quit with exit code 26
         The restart is not guaranteed: it must be dealt
         with by the process manager in use"""
         with contextlib.suppress(discord.HTTPException):
@@ -1198,6 +1200,7 @@ class Core(commands.Cog, CoreLogic):
     @checks.is_owner()
     async def prefix(self, ctx: commands.Context, *prefixes: str):
         """Sets [botname]'s global prefix(es)"""
+>>>>>>> origin/V3/develop
         if not prefixes:
             await ctx.send_help()
             return
@@ -1665,8 +1668,8 @@ class Core(commands.Cog, CoreLogic):
 
         if await ctx.embed_requested():
             e = discord.Embed(color=await ctx.embed_colour())
-            e.title = "Debug Info for Red"
-            e.add_field(name="Red version", value=redver, inline=True)
+            e.title = "Debug Info for Priscilla"
+            e.add_field(name="Priscilla version", value=redver, inline=True)
             e.add_field(name="Python version", value=pyver, inline=True)
             e.add_field(name="Discord.py version", value=dpy_version, inline=True)
             e.add_field(name="Pip version", value=pipver, inline=True)
@@ -1681,8 +1684,8 @@ class Core(commands.Cog, CoreLogic):
             await ctx.send(embed=e)
         else:
             info = (
-                "Debug Info for Red\n\n"
-                + "Red version: {}\n".format(redver)
+                "Debug Info for Priscilla\n\n"
+                + "Priscilla version: {}\n".format(redver)
                 + "Python version: {}\n".format(pyver)
                 + "Python executable: {}\n".format(sys.executable)
                 + "Discord.py version: {}\n".format(dpy_version)
