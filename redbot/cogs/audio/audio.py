@@ -7446,8 +7446,8 @@ class Audio(commands.Cog):
     @commands.command()
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
-    async def sing(self, ctx: commands.Context):
-        """Make Red sing one of her songs."""
+    async def djpriscilla(self, ctx: commands.Context):
+        """Make Priscilla play one of her songs."""
         ids = (
             "zGTkAVsrfg8",
             "cGMWL8cOeAU",
@@ -7785,7 +7785,7 @@ class Audio(commands.Cog):
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def volume(self, ctx: commands.Context, vol: int = None):
-        """Set the volume, 1% - 150%."""
+        """Set the volume, 1% - 1000%."""
         dj_enabled = self._dj_status_cache.setdefault(
             ctx.guild.id, await self.config.guild(ctx.guild).dj_enabled()
         )
@@ -7816,8 +7816,8 @@ class Audio(commands.Cog):
                 )
         if vol < 0:
             vol = 0
-        if vol > 150:
-            vol = 150
+        if vol > 1000:
+            vol = 1000
             await self.config.guild(ctx.guild).volume.set(vol)
             if self._player_check(ctx):
                 await lavalink.get_player(ctx.guild.id).set_volume(vol)

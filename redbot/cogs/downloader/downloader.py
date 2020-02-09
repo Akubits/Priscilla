@@ -1332,8 +1332,8 @@ class Downloader(commands.Cog):
             cog_name = cog_installable.name
         else:
             is_installable = False
-            made_by = "26 & co."
-            repo_url = "https://github.com/Cog-Creators/Red-DiscordBot"
+            made_by = "26 & co. (slightly modified by Akubits)"
+            repo_url = "https://github.com/Akubits/Priscilla"
             cog_name = cog_installable.__class__.__name__
 
         msg = _(

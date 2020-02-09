@@ -563,7 +563,7 @@ class Group(Value):
 
 
 class Config:
-    """Configuration manager for cogs and Red.
+    """Configuration manager for cogs and Priscilla.
 
     You should always use `get_conf` to instantiate a Config object. Use
     `get_core_conf` for Config used in the core package.

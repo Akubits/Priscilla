@@ -87,7 +87,7 @@ def debug_info():
         osver = "{} {}".format(os_info[0], os_info[1]).strip()
     user_who_ran = getpass.getuser()
     info = (
-        "Debug Info for Red\n\n"
+        "Debug Info for Priscilla\n\n"
         + "Red version: {}\n".format(redver)
         + "Python version: {}\n".format(pyver)
         + "Python executable: {}\n".format(sys.executable)

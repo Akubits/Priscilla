@@ -29,7 +29,7 @@ if sys.platform == "linux":
 
 INTERACTIVE_MODE = not len(sys.argv) > 1  # CLI flags = non-interactive
 
-INTRO = "==========================\nRed Discord Bot - Launcher\n==========================\n"
+INTRO = "==========================\nPriscilla Discord Bot - Launcher\n==========================\n"
 
 IS_WINDOWS = os.name == "nt"
 IS_MAC = sys.platform == "darwin"
@@ -47,7 +47,7 @@ def is_venv():
 
 def parse_cli_args():
     parser = argparse.ArgumentParser(
-        description="Red - Discord Bot's launcher (V3)", allow_abbrev=False
+        description="Priscilla - Discord Bot's launcher (V3)", allow_abbrev=False
     )
     instances = load_existing_config()
     parser.add_argument(
@@ -58,9 +58,9 @@ def parse_cli_args():
         help="The instance to run",
         choices=list(instances.keys()),
     )
-    parser.add_argument("--start", "-s", help="Starts Red", action="store_true")
+    parser.add_argument("--start", "-s", help="Starts Priscilla", action="store_true")
     parser.add_argument(
-        "--auto-restart", help="Autorestarts Red in case of issues", action="store_true"
+        "--auto-restart", help="Autorestarts Priscilla in case of issues", action="store_true"
     )
     return parser.parse_known_args()
 
@@ -83,7 +83,7 @@ def instance_menu():
         print("No instances found!")
         return None
     counter = 0
-    print("Red instance menu\n")
+    print("Priscilla instance menu\n")
 
     name_num_map = {}
     for name in list(instances.keys()):
@@ -122,15 +122,15 @@ def user_choice():
 
 def main_menu(flags_to_pass):
     if IS_WINDOWS:
-        os.system("TITLE Red - Discord Bot V3 Launcher")
+        os.system("TITLE Priscilla - Discord Bot V3 Launcher")
     clear_screen()
     while True:
         print(INTRO)
         print("\033[4mCurrent version:\033[0m {}".format(__version__))
         print("WARNING: The launcher is scheduled for removal at a later date.")
         print("")
-        print("1. Run Red w/ autorestart in case of issues")
-        print("2. Run Red")
+        print("1. Run Priscilla w/ autorestart in case of issues")
+        print("2. Run Priscilla")
         print("0. Exit")
         choice = user_choice()
         if choice == "1":
@@ -162,7 +162,7 @@ def main():
         main_menu(flags_to_pass)
     elif args.start:
         print("WARNING: The launcher is scheduled for removal at a later date.")
-        print("Starting Red...")
+        print("Starting Priscilla...")
         run_red(args.instancename, autorestart=args.auto_restart, cliflags=flags_to_pass)
 
 
